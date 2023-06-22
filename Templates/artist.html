@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .date {
+    display:list-item;
+    float: initial;
+    height:25px;
+    width:25px;
+    margin-right: 5px;
+}
+ 
+    .home {
+        background-color: white;
+     border: none;
+        color: brown;
+     padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+</head>
+<body style = "background-color: brown;">
+       <a href="http://localhost:6789"><button class="home"><i class="fa fa-home"></i></button></a> 
+
+        <p><h1 style= "font-family: 'Times New Roman', Times, serif; color:cornsilk"><u><p align = "center">{{.Name}}</p></u></h1></p>
+        <p align = "center"><img src="{{.Image}}"> </p>
+       <u><p>Creation Date:</u> {{.CreationDate}}</p>
+    <u><p>First Album:</u> {{.FirstAlbum}}</p>
+<u> <p>Members:</u> {{range .Members}}{{.}}; {{end}}</p>
+<u> <p>Dates and Locations: </u>{{range $key, $values := .DatesNLocations}}<p style = "font-size: large;"><u>{{$key}}:</u></p> <p><div class = "date">{{range $values}}{{.}};</div></p>{{end}}{{end}}</p>
+        </div>
+</body>
+</html>

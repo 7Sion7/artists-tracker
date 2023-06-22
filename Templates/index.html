@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+        .card {
+height: 470px;
+  width: 25%;
+  float: left;
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists-Tracker</title>
+</head>
+<body align = "justify" style = "background-color: brown;">
+    
+    <u style="color:blanchedalmond"> <h1 style="color:blanchedalmond">Welcome to Groupie-Tracker</h1>
+    </u>
+
+    {{range .}}
+    <div class="card" >
+        <a  href="{{.ID}}"><img src="{{.Image}}"> </a>
+
+       <a href="{{.Name}}"><p><h1 style= "font-family: 'Times New Roman', Times, serif; color:cornsilk;"><u><p>{{.Name}}</p></u></h1></p></a> 
+        
+    </div>
+    {{end}}
+</div>
+</body>
+</html>
